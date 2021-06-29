@@ -27,8 +27,9 @@ public class Main extends Application {
 
         scenes.put(MainMenu.class.getSimpleName(), new MainMenu());
         scenes.put(CreateCharacter.class.getSimpleName(), new CreateCharacter());
+        scenes.put(MainMenu.class.getSimpleName(), new MainMenu());
 
-        show(MainMenu.class);
+        show(CreateCharacter.class);
 
     }
 
@@ -38,7 +39,7 @@ public class Main extends Application {
 
     public static void show(Class<? extends RPGScene> clazz) {
         Optional<RPGScene> sceneOptional = Optional.of(scenes.get(clazz.getSimpleName()));
-        if(sceneOptional.isPresent())
+        if (sceneOptional.isPresent())
             show(sceneOptional.get());
     }
 }

@@ -54,7 +54,6 @@ public class MainMenu implements RPGScene {
 
         rootMainMenu.getChildren().add(startNewGame);
         rootMainMenu.getChildren().add(savedGame);
-        //rootMainMenu.getChildren().add(title);
         rootMainMenu.getChildren().add(test);
         stage.setScene(sceneMainMenu);
         stage.show();
