@@ -1,6 +1,7 @@
 package com.spectu.game;
 
 import com.spectu.game.scenes.CreateCharacter;
+import com.spectu.game.scenes.GameMenu;
 import com.spectu.game.scenes.MainMenu;
 import com.spectu.game.scenes.RPGScene;
 import javafx.application.Application;
@@ -27,9 +28,9 @@ public class Main extends Application {
 
         scenes.put(MainMenu.class.getSimpleName(), new MainMenu());
         scenes.put(CreateCharacter.class.getSimpleName(), new CreateCharacter());
-        scenes.put(MainMenu.class.getSimpleName(), new MainMenu());
+        scenes.put(GameMenu.class.getSimpleName(), new GameMenu());
 
-        show(CreateCharacter.class);
+        show(MainMenu.class);
 
     }
 
