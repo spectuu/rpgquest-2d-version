@@ -1,6 +1,7 @@
 package com.spectu.game.scenes;
 
 import com.spectu.game.Main;
+import com.spectu.game.entity.Player;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,22 +11,20 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class CreateCharacter implements RPGScene {
-
-    AnchorPane rootCreateCharacter;
+    String name;
     TextField playerName;
+    Player player = new Player(name);
+    AnchorPane rootCreateCharacter;
     Scene sceneCreateCharacter;
     Label characterName;
     Label characterClassText;
-    Button test;
     Button classAssassin;
     Button classBerserker;
     Button classFighter;
     Button classWizard;
     Button createCharacter;
-
     @Override
     public Scene create(Stage stage) {
-
         characterName = new Label();
         characterName.setFont(new Font(15));
         characterName.setText("Enter your character's name:");
@@ -49,7 +48,7 @@ public class CreateCharacter implements RPGScene {
         classFighter.setLayoutX(0);
         classFighter.setLayoutY(180);
         classFighter.setOnAction((e) -> {
-
+            player.playerClass = "Fighter";
         });
 
         classBerserker = new Button("Berserker");
@@ -57,7 +56,7 @@ public class CreateCharacter implements RPGScene {
         classBerserker.setLayoutX(0);
         classBerserker.setLayoutY(230);
         classBerserker.setOnAction((e) -> {
-
+            player.playerClass = "Berserker";
         });
 
         classAssassin = new Button("Assassin");
@@ -65,7 +64,7 @@ public class CreateCharacter implements RPGScene {
         classAssassin.setLayoutX(0);
         classAssassin.setLayoutY(280);
         classAssassin.setOnAction((e) -> {
-
+            player.playerClass = "Assassin";
         });
 
         classWizard = new Button("Wizard");
@@ -73,7 +72,7 @@ public class CreateCharacter implements RPGScene {
         classWizard.setLayoutX(0);
         classWizard.setLayoutY(330);
         classWizard.setOnAction((e) -> {
-
+            player.playerClass = "Wizard";
         });
 
         createCharacter = new Button("CreateCharacter!");
@@ -81,6 +80,9 @@ public class CreateCharacter implements RPGScene {
         createCharacter.setLayoutX(0);
         createCharacter.setLayoutY(380);
         createCharacter.setOnAction((e) -> {
+            System.out.println(player.name);
+            System.out.println(player.heal);
+            System.out.println(player.playerClass);
             Main.show(GameMenu.class);
         });
 

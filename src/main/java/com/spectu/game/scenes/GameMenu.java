@@ -1,6 +1,7 @@
 package com.spectu.game.scenes;
 
 import com.spectu.game.Main;
+import com.spectu.game.entity.Player;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
