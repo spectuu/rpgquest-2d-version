@@ -28,28 +28,22 @@ public class MainMenu implements RPGScene {
         stage.setTitle("RPGQUEST2D-VERSION");
         title = new Label();
         title.setText("WElCOME TO RPGQUEST!");
-        title.setFont(new Font(30));
-        title.setLayoutX(0);
-        title.setLayoutY(0);
-
-        rootMainMenu = new AnchorPane();
-        sceneMainMenu = new Scene(rootMainMenu, 720, 720);
+        title.setFont(new Font(20));
+        title.setLayoutX(20);
+        title.setLayoutY(20);
 
         startNewGame = new Button("Start a new adventure.");
-        startNewGame.setFont(new Font(20));
+        startNewGame.setFont(new Font(15));
+        startNewGame.setLayoutX(20);
+        startNewGame.setLayoutY(60);
         startNewGame.setOnAction((e) -> {
             Main.show(CreateCharacter.class);
         });
 
-        startNewGame.setLayoutX(0);
-        startNewGame.setLayoutY(50);
-
         savedGame = new Button("Carry on with a past adventure.");
-        savedGame.setFont(new Font(20));
-
-
-        savedGame.setLayoutX(0);
-        savedGame.setLayoutY(100);
+        savedGame.setFont(new Font(15));
+        savedGame.setLayoutX(20);
+        savedGame.setLayoutY(125);
 
         Button test = new Button("Switch");
         test.setOnAction((e) -> {
@@ -58,6 +52,10 @@ public class MainMenu implements RPGScene {
 
         test.setLayoutX(0);
         test.setLayoutY(5);
+
+        rootMainMenu = new AnchorPane();
+        sceneMainMenu = new Scene(rootMainMenu, 1024, 530);
+        stage.setResizable(false);
 
         rootMainMenu.getChildren().add(startNewGame);
         rootMainMenu.getChildren().add(savedGame);

@@ -1,4 +1,4 @@
-package com.spectu.game.entity;
+package com.spectu.game.entities;
 
 public class Entity {
 

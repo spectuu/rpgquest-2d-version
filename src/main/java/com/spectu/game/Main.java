@@ -5,8 +5,11 @@ import com.spectu.game.scenes.GameMenu;
 import com.spectu.game.scenes.MainMenu;
 import com.spectu.game.scenes.RPGScene;
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -32,6 +35,15 @@ public class Main extends Application {
 
         show(MainMenu.class);
 
+    }
+
+    public static Image getImage(String name) {
+        try {
+            return new Image(new FileInputStream("./images/" + name));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static void show(RPGScene rpgScene) {
