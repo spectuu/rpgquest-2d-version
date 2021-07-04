@@ -1,9 +1,6 @@
 package com.spectu.game;
 
-import com.spectu.game.scenes.CreateCharacter;
-import com.spectu.game.scenes.GameMenu;
-import com.spectu.game.scenes.MainMenu;
-import com.spectu.game.scenes.RPGScene;
+import com.spectu.game.scenes.*;
 import javafx.application.Application;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -32,7 +29,7 @@ public class Main extends Application {
         scenes.put(MainMenu.class.getSimpleName(), new MainMenu());
         scenes.put(CreateCharacter.class.getSimpleName(), new CreateCharacter());
         scenes.put(GameMenu.class.getSimpleName(), new GameMenu());
-
+        scenes.put(Statistics.class.getSimpleName(), new Statistics());
         show(MainMenu.class);
 
     }

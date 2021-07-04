@@ -8,7 +8,7 @@ import javax.swing.*;
 
 public class Assassin {
 
-    public static ImageView imageAssassin(){
+    public static ImageView imageAssassin() {
 
         Image assassin = Main.getImage("Assassin.png");
         ImageView assassinImageView = new ImageView(assassin);
@@ -16,7 +16,7 @@ public class Assassin {
         return assassinImageView;
     }
 
-    public static ImageView imageWeaponAssassin(){
+    public static ImageView imageWeaponAssassin() {
 
         Image weapon = Main.getImage("SpecialWeaponAssassin.png");
         ImageView weaponImageView = new ImageView(weapon);

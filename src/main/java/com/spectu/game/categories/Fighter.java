@@ -7,16 +7,16 @@ import javafx.scene.image.ImageView;
 
 public class Fighter {
 
-    public static ImageView imageFighter(){
+    public static ImageView imageFighter() {
 
-       Image fighter = Main.getImage("Fighter.png");
-       ImageView fighterImageView = new ImageView(fighter);
+        Image fighter = Main.getImage("Fighter.png");
+        ImageView fighterImageView = new ImageView(fighter);
 
 
-       return fighterImageView;
+        return fighterImageView;
     }
 
-    public static ImageView imageWeaponFighter(){
+    public static ImageView imageWeaponFighter() {
 
         Image weapon = Main.getImage("SpecialWeaponFighter.png");
         ImageView weaponImageView = new ImageView(weapon);

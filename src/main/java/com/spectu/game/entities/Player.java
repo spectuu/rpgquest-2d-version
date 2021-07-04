@@ -1,32 +1,38 @@
 package com.spectu.game.entities;
 
-public class Player extends Entity{
+import com.spectu.game.objects.*;
 
+public class Player extends Entity {
+
+    public Inventory inventory;
     public String playerClass;
-    public int healMax = 100;
 
     public Player(String name) {
-        super(name, 100);
+        super(name, 50);
+
+        this.inventory = new Inventory(
+                new HealingPotion(), new EscapePotion(), new EnchantedKnife(), new Mythril(), new Spectral()
+        );
     }
 
-    public int getCurrentHeal(){
+
+    public int getCurrentHeal() {
 
         return heal;
 
     }
 
-    public String getPlayerName(){
+    public String getPlayerName() {
 
         return name;
 
     }
 
-    public String getPlayerClass(){
+    public String getPlayerClass() {
 
         return playerClass;
 
     }
-
 
 
 }

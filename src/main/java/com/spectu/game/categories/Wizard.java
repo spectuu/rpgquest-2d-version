@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
 
 public class Wizard {
 
-    public static ImageView imageWizard(){
+    public static ImageView imageWizard() {
 
         Image wizard = Main.getImage("Wizard.png");
         ImageView wizardImageView = new ImageView(wizard);
@@ -15,7 +15,7 @@ public class Wizard {
 
     }
 
-    public static ImageView imageWeaponWizard(){
+    public static ImageView imageWeaponWizard() {
 
         Image weapon = Main.getImage("SpecialWeaponWizard.png");
         ImageView weaponImageView = new ImageView(weapon);
