@@ -6,9 +6,9 @@ import com.spectu.game.scenes.Statistics;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class HealingPotion extends Object {
+public class HealingPotion extends Item {
 
-    public HealingPotion() { super("Healing Potion", 10); }
+    public HealingPotion() { super("Healing Potion", 5, "HealingPotion.png"); }
 
     public void heal() {
         if (amount > 0) {
@@ -20,6 +20,11 @@ public class HealingPotion extends Object {
             }
         }
         Statistics.playerHeal.setText("Player heal: " + CreateCharacter.playerHeal + "/100");
+    }
+
+    @Override
+    public void onClick() {
+
     }
 
     public ImageView getImageHealingPotion(){

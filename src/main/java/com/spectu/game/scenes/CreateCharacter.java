@@ -280,7 +280,6 @@ public class CreateCharacter implements RPGScene {
 
                 }
 
-                player.inventory.showInventory();
                 Main.show(GameMenu.class);
 
             }

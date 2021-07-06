@@ -1,6 +1,7 @@
 package com.spectu.game.entities;
-
 import com.spectu.game.objects.*;
+import com.spectu.game.objects.weapons.MythrilSword;
+import com.spectu.game.objects.weapons.SpectralHoz;
 
 public class Player extends Entity {
 
@@ -11,28 +12,6 @@ public class Player extends Entity {
         super(name, 50);
 
         this.inventory = new Inventory(
-                new HealingPotion(), new EscapePotion(), new EnchantedKnife(), new Mythril(), new Spectral()
-        );
+                new HealingPotion(), new EscapePotion(), new EnchantedKnife(), new Mythril(), new Spectral(), new SpectralHoz(), new MythrilSword());
     }
-
-
-    public int getCurrentHeal() {
-
-        return heal;
-
-    }
-
-    public String getPlayerName() {
-
-        return name;
-
-    }
-
-    public String getPlayerClass() {
-
-        return playerClass;
-
-    }
-
-
 }

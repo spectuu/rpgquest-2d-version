@@ -13,8 +13,6 @@ public class GameMenu implements RPGScene {
     Scene sceneGameMenu;
     AnchorPane rootGameMenu;
     Button statistics;
-    Button inventory;
-    Button explore;
     Label title;
 
     @Override

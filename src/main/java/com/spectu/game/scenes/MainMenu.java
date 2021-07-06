@@ -27,7 +27,7 @@ public class MainMenu implements RPGScene {
 
         stage.setTitle("RPGQUEST2D-VERSION");
         title = new Label();
-        title.setText("WElCOME TO RPGQUEST!");
+        title.setText("WELCOME TO RPGQUEST!");
         title.setFont(new Font(20));
         title.setLayoutX(20);
         title.setLayoutY(20);

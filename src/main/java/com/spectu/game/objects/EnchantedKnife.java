@@ -1,15 +1,11 @@
 package com.spectu.game.objects;
 
-import com.spectu.game.Main;
 import com.spectu.game.scenes.CreateCharacter;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
-
-public class EnchantedKnife extends Object {
+public class EnchantedKnife extends Item {
 
     public EnchantedKnife() {
-        super("Enchanted Knife", 0);
+        super("Enchanted Knife", 50, "EnchantedKnife.png");
     }
 
     public void sacrifice() {
@@ -20,11 +16,4 @@ public class EnchantedKnife extends Object {
 
         }
     }
-
-    public ImageView getImageEnchantedKnife(){
-        Image image = Main.getImage("EnchantedKnife.png");
-        ImageView imageEnchantedKnife = new ImageView(image);
-        return imageEnchantedKnife;
-    }
-
 }

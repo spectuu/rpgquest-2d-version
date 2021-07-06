@@ -1,26 +1,41 @@
 package com.spectu.game.objects;
 
-import com.spectu.game.Main;
-import javafx.scene.image.Image;
+import com.spectu.game.scenes.Statistics;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Font;
+
 
 public class Inventory {
 
-    public Object[] objects;
+    public Item[] items;
 
-    public Inventory(Object... objects) {
-        this.objects = objects;
+    public Inventory(Item...items) {
+        this.items = items;
     }
-
     public void showInventory() {
-        for (int i = 0; i < objects.length; i++) {
-            Object object = objects[i];
-            if (object.amount > 0) {
-                System.out.println("[" + object.amount + "] " + object.name);
-            }
+        int e = 70;
+        int a = 50;
+        for (int i = 0; i < items.length; i++) {
+                Item item = items[i];
+
+                if (item.amount > 0) {
+
+                    ImageView itemsImageView = item.imageItem();
+                    itemsImageView.setLayoutX(e);
+                    itemsImageView.setLayoutY(400);
+
+                    Label itemsNameAndAmount = new Label(item.name + " x" + item.amount);
+                    itemsNameAndAmount.setFont(new Font(15));
+                    itemsNameAndAmount.setLayoutX(a);
+                    itemsNameAndAmount.setLayoutY(460);
+                    e += 170;
+                    a += 170;
+
+                    Statistics.rootStatistics.getChildren().addAll(itemsImageView, itemsNameAndAmount);
+                }
         }
     }
-
     public HealingPotion getHealingPotion() {
         return (HealingPotion) getByName("Healing Potion");
     }
@@ -39,10 +54,10 @@ public class Inventory {
         return (Spectral) getByName("Spectral");
     }
 
-    public Object getByName(String name) {
-        for (Object object : objects) {
-            if (object.name.equals(name) && object.amount > 0) {
-                return object;
+    public Item getByName(String name) {
+        for (Item item : items) {
+            if (item.name.equals(name)) {
+                return item;
             }
         }
         return null;

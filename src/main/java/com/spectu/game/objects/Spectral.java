@@ -4,9 +4,9 @@ import com.spectu.game.Main;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class Spectral extends Object{
+public class Spectral extends Item {
 
-    public Spectral() { super("Spectral", 0); }
+    public Spectral() { super("Spectral", 0, "Spectral.png"); }
 
     public ImageView getImageSpectral(){
         Image image = Main.getImage("Spectral.png");
