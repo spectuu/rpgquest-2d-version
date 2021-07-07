@@ -9,6 +9,7 @@ public class Item {
     public String name;
     public int amount;
     public String imageItem;
+    public ImageView imageViewItem;
 
     public Item(String name, int amount, String imageItem) {
         this.name = name;
@@ -26,7 +27,7 @@ public class Item {
 
     public ImageView imageItem(){
      Image image = Main.getImage(imageItem);
-     ImageView imageViewItem = new ImageView(image);
+     imageViewItem = new ImageView(image);
         return imageViewItem;
     }
 }

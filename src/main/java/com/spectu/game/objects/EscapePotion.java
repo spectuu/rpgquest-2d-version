@@ -7,10 +7,4 @@ import javafx.scene.image.ImageView;
 public class EscapePotion extends Item {
 
     public EscapePotion() { super("Escape Potion", 2, "EscapePotion.png"); }
-
-    public ImageView getImageEscapePotion(){
-        Image image = Main.getImage("EscapePotion.png");
-        ImageView imageEscapePotion = new ImageView(image);
-        return imageEscapePotion;
-    }
 }

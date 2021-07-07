@@ -24,7 +24,6 @@ public class MainMenu implements RPGScene {
     public Scene create(Stage stage) {
 
         System.out.println("The Application has been running");
-
         stage.setTitle("RPGQUEST2D-VERSION");
         title = new Label();
         title.setText("WELCOME TO RPGQUEST!");
@@ -56,7 +55,6 @@ public class MainMenu implements RPGScene {
         rootMainMenu = new AnchorPane();
         sceneMainMenu = new Scene(rootMainMenu, 1024, 530);
         stage.setResizable(false);
-
         rootMainMenu.getChildren().add(startNewGame);
         rootMainMenu.getChildren().add(savedGame);
         rootMainMenu.getChildren().add(title);

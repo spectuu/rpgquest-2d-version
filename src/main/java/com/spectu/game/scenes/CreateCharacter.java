@@ -1,9 +1,6 @@
 package com.spectu.game.scenes;
 
 import com.spectu.game.Main;
-import com.spectu.game.categories.Assassin;
-import com.spectu.game.categories.Fighter;
-import com.spectu.game.categories.Wizard;
 import com.spectu.game.entities.Player;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,36 +14,41 @@ import javafx.stage.Stage;
 
 public class CreateCharacter implements RPGScene {
 
-    public static String playerName;
-    public static String playerClass;
-    public static int playerHeal;
     public static ImageView playerCharacter;
     public static ImageView playerSpecialWeapon;
     public static String playerAbility;
     public static String playerSpecialWeaponDescription;
     public static Player player;
 
-    TextField characterValueName;
     AnchorPane rootCreateCharacter;
     Scene sceneCreateCharacter;
+
     Label characterName;
     Label characterClassText;
     Label character;
     Label specialWeapon;
+
     Label abilityFighter;
     Label abilityAssassin;
     Label abilityWizard;
+
     Label descriptionWeaponFighter;
     Label descriptionWeaponAssassin;
     Label descriptionWeaponWizard;
+    TextField characterValueName;
+
     Label nullPlayerName;
     Label nullPlayerClass;
+
     ComboBox characterClass;
     Button createCharacter;
+
     ImageView fighter;
     ImageView fighterSpecialWeapon;
+
     ImageView assassin;
     ImageView assassinSpecialWeapon;
+
     ImageView wizard;
     ImageView wizardSpecialWeapon;
 
@@ -94,7 +96,7 @@ public class CreateCharacter implements RPGScene {
 
         player = new Player(characterValueName.getText());
 
-        fighter = Fighter.imageFighter();
+        fighter = player.fighter.getCharacterImage();
         fighter.setVisible(false);
         fighter.setLayoutX(30);
         fighter.setLayoutY(320);
@@ -111,17 +113,17 @@ public class CreateCharacter implements RPGScene {
         descriptionWeaponFighter.setLayoutX(20);
         descriptionWeaponFighter.setLayoutY(250);
 
-        fighterSpecialWeapon = Fighter.imageWeaponFighter();
+        fighterSpecialWeapon = player.fighter.getWeaponImage();
         fighterSpecialWeapon.setVisible(false);
         fighterSpecialWeapon.setLayoutX(160);
         fighterSpecialWeapon.setLayoutY(320);
 
-        assassin = Assassin.imageAssassin();
+        assassin = player.assassin.getCharacterImage();
         assassin.setVisible(false);
         assassin.setLayoutX(30);
         assassin.setLayoutY(320);
 
-        abilityAssassin = new Label("Ability: \n The Assassin executes the enemy if he is just within 15 life.");
+        abilityAssassin = new Label("Ability: \n The Assassin executes the enemy if he is just falls below 15 life.");
         abilityAssassin.setFont(new Font(12));
         abilityAssassin.setVisible(false);
         abilityAssassin.setLayoutX(20);
@@ -133,12 +135,12 @@ public class CreateCharacter implements RPGScene {
         descriptionWeaponAssassin.setLayoutX(20);
         descriptionWeaponAssassin.setLayoutY(250);
 
-        assassinSpecialWeapon = Assassin.imageWeaponAssassin();
+        assassinSpecialWeapon = player.assassin.getWeaponImage();
         assassinSpecialWeapon.setVisible(false);
         assassinSpecialWeapon.setLayoutX(160);
         assassinSpecialWeapon.setLayoutY(320);
 
-        wizard = Wizard.imageWizard();
+        wizard = player.wizard.getCharacterImage();
         wizard.setVisible(false);
         wizard.setLayoutX(30);
         wizard.setLayoutY(320);
@@ -155,7 +157,7 @@ public class CreateCharacter implements RPGScene {
         descriptionWeaponWizard.setLayoutX(20);
         descriptionWeaponWizard.setLayoutY(250);
 
-        wizardSpecialWeapon = Wizard.imageWeaponWizard();
+        wizardSpecialWeapon = player.wizard.getWeaponImage();
         wizardSpecialWeapon.setVisible(false);
         wizardSpecialWeapon.setLayoutX(180);
         wizardSpecialWeapon.setLayoutY(330);
@@ -253,25 +255,21 @@ public class CreateCharacter implements RPGScene {
 
             } else {
 
-                playerName = player.name;
-                playerHeal = player.heal;
-                playerClass = player.playerClass;
-
-                if (playerClass.equals("Fighter")) {
+                if (player.playerClass.equals("Fighter")) {
 
                     playerCharacter = fighter;
                     playerAbility = abilityFighter.getText();
                     playerSpecialWeapon = fighterSpecialWeapon;
                     playerSpecialWeaponDescription = descriptionWeaponFighter.getText();
 
-                } else if (playerClass.equals("Assassin")) {
+                } else if (player.playerClass.equals("Assassin")) {
 
                     playerCharacter = assassin;
                     playerAbility = abilityAssassin.getText();
                     playerSpecialWeapon = assassinSpecialWeapon;
                     playerSpecialWeaponDescription = descriptionWeaponAssassin.getText();
 
-                } else if (playerClass.equals("Wizard")) {
+                } else if (player.playerClass.equals("Wizard")) {
 
                     playerCharacter = wizard;
                     playerAbility = abilityWizard.getText();

@@ -3,8 +3,6 @@ package com.spectu.game.objects;
 import com.spectu.game.Main;
 import com.spectu.game.scenes.CreateCharacter;
 import com.spectu.game.scenes.Statistics;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 public class HealingPotion extends Item {
 
@@ -12,25 +10,20 @@ public class HealingPotion extends Item {
 
     public void heal() {
         if (amount > 0) {
-            CreateCharacter.playerHeal = CreateCharacter.playerHeal + 20;
-            if (CreateCharacter.playerHeal > 100) {
-                CreateCharacter.playerHeal = 100;
+            CreateCharacter.player.heal = CreateCharacter.player.heal + 20;
+            if (CreateCharacter.player.heal > 100) {
+                CreateCharacter.player.heal = 100;
             } else {
                 amount = amount - 1;
             }
         }
-        Statistics.playerHeal.setText("Player heal: " + CreateCharacter.playerHeal + "/100");
+        Statistics.playerHeal.setText("Player heal: " + CreateCharacter.player.heal + "/100");
     }
 
     @Override
     public void onClick() {
-
+        imageViewItem.setOnMouseClicked((e) -> {
+            heal();
+        });
     }
-
-    public ImageView getImageHealingPotion(){
-        Image image = Main.getImage("HealingPotion.png");
-        ImageView imageHealingPotion = new ImageView(image);
-        return imageHealingPotion;
-    }
-
 }

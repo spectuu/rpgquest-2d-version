@@ -10,7 +10,7 @@ public class EnchantedKnife extends Item {
 
     public void sacrifice() {
         if (amount > 0) {
-            CreateCharacter.playerHeal = CreateCharacter.playerHeal - 5;
+            CreateCharacter.player.heal = CreateCharacter.player.heal - 5;
 
         }else{
 

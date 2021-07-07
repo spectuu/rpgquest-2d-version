@@ -31,17 +31,17 @@ public class Statistics implements RPGScene {
     @Override
     public Scene create(Stage stage) {
 
-        playerName = new Label("Player name: " + CreateCharacter.playerName);
+        playerName = new Label("Player name: " + CreateCharacter.player.name);
         playerName.setFont(new Font(15));
         playerName.setLayoutX(20);
         playerName.setLayoutY(30);
 
-        playerHeal = new Label("Player heal: " + CreateCharacter.playerHeal + "/100");
+        playerHeal = new Label("Player heal: " + CreateCharacter.player.heal + "/100");
         playerHeal.setFont(new Font(15));
         playerHeal.setLayoutX(20);
         playerHeal.setLayoutY(60);
 
-        playerClass = new Label("Player class: " + CreateCharacter.playerClass);
+        playerClass = new Label("Player class: " + CreateCharacter.player.playerClass);
         playerClass.setFont(new Font(15));
         playerClass.setLayoutX(20);
         playerClass.setLayoutY(90);
@@ -96,6 +96,7 @@ public class Statistics implements RPGScene {
 
         rootStatistics = new AnchorPane();
         CreateCharacter.player.inventory.showInventory();
+        CreateCharacter.player.inventory.getHealingPotion().onClick();
         sceneStatistics = new Scene(rootStatistics, 1024, 530);
         rootStatistics.getChildren().add(playerName);
         rootStatistics.getChildren().add(playerHeal);
