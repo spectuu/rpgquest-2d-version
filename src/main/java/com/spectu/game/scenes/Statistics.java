@@ -97,7 +97,9 @@ public class Statistics implements RPGScene {
         rootStatistics = new AnchorPane();
         CreateCharacter.player.inventory.showInventory();
         CreateCharacter.player.inventory.getHealingPotion().onClick();
-        sceneStatistics = new Scene(rootStatistics, 1024, 530);
+        CreateCharacter.player.inventory.getMythrilSword().weaponLabelInventory();
+        CreateCharacter.player.inventory.getSpectralHoz().weaponLabelInventory();
+        sceneStatistics = new Scene(rootStatistics, 1200, 530);
         rootStatistics.getChildren().add(playerName);
         rootStatistics.getChildren().add(playerHeal);
         rootStatistics.getChildren().add(playerClass);

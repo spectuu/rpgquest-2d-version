@@ -18,10 +18,8 @@ public class Category {
     }
 
     public ImageView getCharacterImage(){
-
         Image image = Main.getImage(characterImage);
         characterImageView = new ImageView(image);
-
         return characterImageView;
     }
 

@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class IncarnationOfTheDesert extends Enemy{
 
     public IncarnationOfTheDesert() {
-        super("Incarnation of the desert", 170, 30);
+        super("Incarnation of the desert", 170, 30, "IncarnationOfTheDesert.png");
     }
 
     public void Sandstorm(){
@@ -15,5 +15,10 @@ public class IncarnationOfTheDesert extends Enemy{
         if(p == 15){
             CreateCharacter.player.heal -= 13;
         }
+    }
+
+    @Override
+    public void chanceEnemy(){
+
     }
 }

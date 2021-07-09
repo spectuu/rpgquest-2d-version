@@ -1,6 +1,9 @@
 package com.spectu.game.scenes;
 
 import com.spectu.game.Main;
+import com.spectu.game.entities.enemies.CliffGolem;
+import com.spectu.game.locations.CliffMine;
+import com.spectu.game.locations.Location;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,6 +16,7 @@ public class GameMenu implements RPGScene {
     Scene sceneGameMenu;
     AnchorPane rootGameMenu;
     Button statistics;
+    Button map;
     Label title;
 
     @Override
@@ -31,11 +35,19 @@ public class GameMenu implements RPGScene {
             Main.show(Statistics.class);
         });
 
+        map = new Button("Map.");
+        map.setFont(new Font(15));
+        map.setLayoutX(20);
+        map.setLayoutY(160);
+        map.setOnAction((e) -> {
+            Main.show(World.class);
+        });
 
         rootGameMenu = new AnchorPane();
-        sceneGameMenu = new Scene(rootGameMenu, 1024, 530);
+        sceneGameMenu = new Scene(rootGameMenu, 1200, 530);
         rootGameMenu.getChildren().add(title);
         rootGameMenu.getChildren().add(statistics);
+        rootGameMenu.getChildren().add(map);
         stage.setScene(sceneGameMenu);
         stage.show();
 

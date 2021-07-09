@@ -1,6 +1,7 @@
 package com.spectu.game;
 
 import com.spectu.game.scenes.*;
+import com.sun.corba.se.spi.orbutil.threadpool.WorkQueue;
 import javafx.application.Application;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -30,6 +31,10 @@ public class Main extends Application {
         scenes.put(CreateCharacter.class.getSimpleName(), new CreateCharacter());
         scenes.put(GameMenu.class.getSimpleName(), new GameMenu());
         scenes.put(Statistics.class.getSimpleName(), new Statistics());
+        scenes.put(World.class.getSimpleName(), new World());
+        scenes.put(Battle.class.getSimpleName(), new Battle());
+        scenes.put(Booty.class.getSimpleName(), new Booty());
+
         show(MainMenu.class);
 
     }

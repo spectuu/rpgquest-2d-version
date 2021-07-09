@@ -5,7 +5,7 @@ import com.spectu.game.scenes.CreateCharacter;
 public class EnchantedKnife extends Item {
 
     public EnchantedKnife() {
-        super("Enchanted Knife", 50, "EnchantedKnife.png");
+        super("Enchanted Knife", 50, 1,"EnchantedKnife.png");
     }
 
     public void sacrifice() {

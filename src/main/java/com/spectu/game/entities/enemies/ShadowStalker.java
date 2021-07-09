@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ShadowStalker extends Enemy{
 
     public ShadowStalker() {
-        super("Shadow Stalker", 300, 35);
+        super("Shadow Stalker", 300, 35, "ShadowStalker.png");
     }
 
     public void ShadowHook(){
@@ -17,5 +17,10 @@ public class ShadowStalker extends Enemy{
             ShadowChest = CreateCharacter.player.inventory.getEscapePotion().amount;
             CreateCharacter.player.inventory.getEscapePotion().amount = 0;
         }
+    }
+
+    @Override
+    public void chanceEnemy(){
+
     }
 }

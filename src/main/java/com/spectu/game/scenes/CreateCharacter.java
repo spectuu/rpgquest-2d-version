@@ -284,7 +284,7 @@ public class CreateCharacter implements RPGScene {
         });
 
         rootCreateCharacter = new AnchorPane();
-        sceneCreateCharacter = new Scene(rootCreateCharacter, 1024, 530);
+        sceneCreateCharacter = new Scene(rootCreateCharacter, 1200, 530);
         stage.setResizable(false);
 
         rootCreateCharacter.getChildren().add(nullPlayerName);
