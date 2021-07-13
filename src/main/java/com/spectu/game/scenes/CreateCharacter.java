@@ -123,7 +123,7 @@ public class CreateCharacter implements RPGScene {
         assassin.setLayoutX(30);
         assassin.setLayoutY(320);
 
-        abilityAssassin = new Label("Ability: \n The Assassin executes the enemy if he is just falls below 15 life.");
+        abilityAssassin = new Label("Ability: \n the assassin executes the enemy if he is at 15 health or less.");
         abilityAssassin.setFont(new Font(12));
         abilityAssassin.setVisible(false);
         abilityAssassin.setLayoutX(20);
@@ -145,7 +145,7 @@ public class CreateCharacter implements RPGScene {
         wizard.setLayoutX(30);
         wizard.setLayoutY(320);
 
-        abilityWizard = new Label("Ability: \n The Wizard Summons a destructive beam that deals 30 damage.");
+        abilityWizard = new Label("Ability: \n The wizard has a 60% chance to add 2 health potions and 1 escape potion.");
         abilityWizard.setFont(new Font(12));
         abilityWizard.setVisible(false);
         abilityWizard.setLayoutX(20);
@@ -277,7 +277,7 @@ public class CreateCharacter implements RPGScene {
                     playerSpecialWeaponDescription = descriptionWeaponWizard.getText();
 
                 }
-
+                player.specialWeapon();
                 Main.show(GameMenu.class);
 
             }

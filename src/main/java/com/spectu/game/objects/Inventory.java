@@ -1,10 +1,14 @@
 package com.spectu.game.objects;
 
-import com.spectu.game.objects.weapons.MythrilSword;
-import com.spectu.game.objects.weapons.SpectralHoz;
+import com.spectu.game.objects.weapons.*;
+import com.spectu.game.scenes.Battle;
+import com.spectu.game.scenes.CreateCharacter;
 import com.spectu.game.scenes.Statistics;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Pair;
 
@@ -15,8 +19,10 @@ import java.util.Map;
 public class Inventory {
 
     public Item[] items;
+    public Weapon[] weapons;
     public Label itemsNameAndAmount;
     public ImageView itemsImageView;
+    public Scene sceneChecker;
 
     public Map<Item, Pair<ImageView, Label>> map;
 
@@ -32,26 +38,40 @@ public class Inventory {
         int a = 50;
         for (int i = 0; i < items.length; i++) {
                 item = items[i];
-                if (item.amount > 0) {
-
                     itemsImageView = item.imageItem();
-                    itemsImageView.setLayoutX(e);
-                    itemsImageView.setLayoutY(400);
 
                     itemsNameAndAmount = new Label(item.name + " " + item.amount + "/50");
-                    itemsNameAndAmount.setFont(new Font(15));
-                    itemsNameAndAmount.setLayoutX(a);
-                    itemsNameAndAmount.setLayoutY(460);
 
+                    if(sceneChecker == Statistics.sceneStatistics){
 
-                    e += 170;
-                    a += 170;
-                    Statistics.rootStatistics.getChildren().addAll(itemsImageView, itemsNameAndAmount);
+                        itemsImageView.setLayoutX(e);
+                        itemsImageView.setLayoutY(400);
 
+                        itemsNameAndAmount.setFont(new Font(15));
+                        itemsNameAndAmount.setLayoutX(a);
+                        itemsNameAndAmount.setLayoutY(460);
+
+                        e += 170;
+                        a += 170;
+                        Statistics.rootStatistics.getChildren().addAll(itemsImageView, itemsNameAndAmount);
+
+                    }else if(sceneChecker == Battle.sceneBattle){
+
+                        itemsImageView.setLayoutX(e);
+                        itemsImageView.setLayoutY(400);
+
+                        itemsNameAndAmount.setFont(new Font(15));
+                        itemsNameAndAmount.setTextFill(Color.web("#ff2200"));
+                        itemsNameAndAmount.setStyle("-fx-font-weight: bold");
+                        itemsNameAndAmount.setLayoutX(a);
+                        itemsNameAndAmount.setLayoutY(450);
+
+                        e += 170;
+                        a += 170;
+                        Battle.rootBattle.getChildren().addAll(itemsImageView, itemsNameAndAmount);
+                    }
                     Pair<ImageView, Label> pair = new Pair<>(itemsImageView, itemsNameAndAmount);
                     map.put(item, pair);
-
-                }
         }
     }
 
@@ -98,6 +118,18 @@ public class Inventory {
 
     public SpectralHoz getSpectralHoz(){
         return (SpectralHoz) getByName("Spectral Hoz");
+    }
+
+    public GoldenSpear getGoldenSpear(){
+        return (GoldenSpear) getByName("Golden Spear");
+    }
+
+    public EnchantedIceSword getEnchantedIceSword(){
+        return (EnchantedIceSword) getByName("Enchanted Ice Sword");
+    }
+
+    public DiabolicCode getDiabolicCode(){
+        return (DiabolicCode) getByName("Diabolic Code");
     }
 
     public Item getByName(String name) {

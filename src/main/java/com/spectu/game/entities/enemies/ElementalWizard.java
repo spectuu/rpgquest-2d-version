@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ElementalWizard extends Enemy{
 
     public ElementalWizard() {
-        super("Elemental Wizard", 200, 35, "ElementalWizard.png");
+        super("Elemental Wizard", 200, 200,35, "ElementalWizard.png");
     }
 
     public void ElementOfFire(){
@@ -42,6 +42,7 @@ public class ElementalWizard extends Enemy{
 
     @Override
     public void chanceEnemy(){
+        p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
         if(p == 5){
             Location.enemy = new ElementalWizard();
             System.out.println(Location.enemy.name);

@@ -24,11 +24,9 @@ public class Item {
     }
 
     public void onClick() {
-
-    }
-
-    public void itemAttack(){
-
+        if(amount < 0){
+            amount = 0;
+        }
     }
 
     public Label booty(){

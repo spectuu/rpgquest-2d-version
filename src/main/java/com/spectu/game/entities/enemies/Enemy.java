@@ -10,12 +10,15 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Enemy extends Entity{
 
     public int damage;
-    public String enemyImage;
+    public int healMax;
     public int p;
+    public String enemyImage;
 
-    public Enemy(String name, int heal, int damage, String enemyImage) {
+
+    public Enemy(String name, int heal, int healMax, int damage, String enemyImage) {
         super(name, heal);
         this.damage = damage;
+        this.healMax = healMax;
         this.enemyImage = enemyImage;
     }
 
@@ -32,6 +35,5 @@ public class Enemy extends Entity{
 
     public void chanceEnemy(){
     p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
-
     }
 }

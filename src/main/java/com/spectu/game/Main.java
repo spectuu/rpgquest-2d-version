@@ -34,6 +34,7 @@ public class Main extends Application {
         scenes.put(World.class.getSimpleName(), new World());
         scenes.put(Battle.class.getSimpleName(), new Battle());
         scenes.put(Booty.class.getSimpleName(), new Booty());
+        scenes.put(DeathScene.class.getSimpleName(), new DeathScene());
 
         show(MainMenu.class);
 

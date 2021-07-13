@@ -1,8 +1,11 @@
 package com.spectu.game.categories;
 
 import com.spectu.game.Main;
+import com.spectu.game.scenes.CreateCharacter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 
 public class Category {

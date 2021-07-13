@@ -54,6 +54,8 @@ public class Statistics implements RPGScene {
         playerCharacter = CreateCharacter.playerCharacter;
         playerCharacter.setLayoutX(30);
         playerCharacter.setLayoutY(140);
+        playerCharacter.setFitWidth(30);
+        playerCharacter.setFitHeight(46);
 
         specialWeapon = new Label("Special Weapon: ");
         specialWeapon.setFont(new Font(15));
@@ -95,11 +97,14 @@ public class Statistics implements RPGScene {
         });
 
         rootStatistics = new AnchorPane();
+        sceneStatistics = new Scene(rootStatistics, 1200, 530);
+        CreateCharacter.player.inventory.sceneChecker = Statistics.sceneStatistics;
         CreateCharacter.player.inventory.showInventory();
         CreateCharacter.player.inventory.getHealingPotion().onClick();
+        CreateCharacter.player.inventory.getMythril().onClick();
+        CreateCharacter.player.inventory.getSpectral().onClick();
         CreateCharacter.player.inventory.getMythrilSword().weaponLabelInventory();
         CreateCharacter.player.inventory.getSpectralHoz().weaponLabelInventory();
-        sceneStatistics = new Scene(rootStatistics, 1200, 530);
         rootStatistics.getChildren().add(playerName);
         rootStatistics.getChildren().add(playerHeal);
         rootStatistics.getChildren().add(playerClass);

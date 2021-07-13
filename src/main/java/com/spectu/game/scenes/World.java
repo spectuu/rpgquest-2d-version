@@ -18,6 +18,9 @@ public class World implements RPGScene{
 
     public static String locationBooty;
 
+   public static CliffMine cliffMine;
+   public static Dungeon dungeon;
+
     AnchorPane rootWorld;
     Scene sceneWorld;
 
@@ -25,9 +28,6 @@ public class World implements RPGScene{
 
     Label cliffMineName;
     Label dungeonName;
-
-    CliffMine cliffMine;
-    Dungeon dungeon;
 
     Image map;
     ImageView mapImageView;
@@ -39,7 +39,6 @@ public class World implements RPGScene{
 
         cliffMine = new CliffMine();
         dungeon = new Dungeon();
-        locationBooty = "Cliff Mine";
 
         iconCliffMine = cliffMine.iconLocation();
         iconCliffMine.setLayoutX(800);
@@ -53,7 +52,7 @@ public class World implements RPGScene{
 
         cliffMineName = new Label(cliffMine.name + "\n" + "Danger: " + cliffMine.danger);
         cliffMineName.setFont(new Font(15));
-        cliffMineName.setTextFill(Color.web("#1aff00"));
+        cliffMineName.setTextFill(Color.web("#ff2200"));
         cliffMineName.setStyle("-fx-font-weight: bold");
         cliffMineName.setLayoutX(800);
         cliffMineName.setLayoutY(360);

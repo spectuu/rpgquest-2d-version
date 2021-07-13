@@ -18,14 +18,16 @@ public class Booty implements RPGScene{
     Label titleBooty;
     Label mythrilObtained;
     Label spectralObtained;
+    Label healingPotionObtained;
+    Label escapePotionObtained;
+    Label enchantedKnifeObtained;
 
     ImageView mythrilImageView;
     ImageView spectralImageView;
-
+    ImageView escapePotionImageView;
+    ImageView healingPotionImageView;
+    ImageView enchantedKnifeImageView;
     Button continueGameMenu;
-
-
-    int a = ThreadLocalRandom.current().nextInt(1, (1 + 15));
 
     @Override
     public Scene create(Stage stage) {
@@ -55,23 +57,53 @@ public class Booty implements RPGScene{
            spectralImageView.setLayoutX(205);
            spectralImageView.setLayoutY(150);
 
-        }else if(World.locationBooty.equals("Dungeon")){
+            rootBooty.getChildren().add(mythrilObtained);
+            rootBooty.getChildren().add(spectralObtained);
+            rootBooty.getChildren().add(mythrilImageView);
+            rootBooty.getChildren().add(spectralImageView);
 
+        }else if(World.locationBooty.equals("Dungeon")){
+            healingPotionObtained = CreateCharacter.player.inventory.getHealingPotion().booty();
+            healingPotionObtained.setLayoutX(50);
+            healingPotionObtained.setLayoutY(95);
+
+            healingPotionImageView = CreateCharacter.player.inventory.getHealingPotion().imageItem();
+            healingPotionImageView.setLayoutX(250);
+            healingPotionImageView.setLayoutY(95);
+
+            escapePotionObtained = CreateCharacter.player.inventory.getEscapePotion().booty();
+            escapePotionObtained.setLayoutX(50);
+            escapePotionObtained.setLayoutY(150);
+
+            escapePotionImageView = CreateCharacter.player.inventory.getEscapePotion().imageItem();
+            escapePotionImageView.setLayoutX(250);
+            escapePotionImageView.setLayoutY(150);
+
+            enchantedKnifeObtained = CreateCharacter.player.inventory.getEnchantedKnife().booty();
+            enchantedKnifeObtained.setLayoutX(50);
+            enchantedKnifeObtained.setLayoutY(200);
+
+            enchantedKnifeImageView = CreateCharacter.player.inventory.getEnchantedKnife().imageItem();
+            enchantedKnifeImageView.setLayoutX(250);
+            enchantedKnifeImageView.setLayoutY(200);
+
+            rootBooty.getChildren().add(healingPotionObtained);
+            rootBooty.getChildren().add(healingPotionImageView);
+            rootBooty.getChildren().add(escapePotionObtained);
+            rootBooty.getChildren().add(escapePotionImageView);
+            rootBooty.getChildren().add(enchantedKnifeObtained);
+            rootBooty.getChildren().add(enchantedKnifeImageView);
         }
 
         continueGameMenu = new Button("Continue");
         continueGameMenu.setFont(new Font(14));
         continueGameMenu.setLayoutX(50);
-        continueGameMenu.setLayoutY(195);
+        continueGameMenu.setLayoutY(350);
         continueGameMenu.setOnAction((e) -> {
             Main.show(GameMenu.class);
         });
 
         rootBooty.getChildren().add(titleBooty);
-        rootBooty.getChildren().add(mythrilObtained);
-        rootBooty.getChildren().add(spectralObtained);
-        rootBooty.getChildren().add(mythrilImageView);
-        rootBooty.getChildren().add(spectralImageView);
         rootBooty.getChildren().add(continueGameMenu);
 
         stage.setScene(sceneBooty);
