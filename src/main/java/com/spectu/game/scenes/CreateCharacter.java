@@ -1,7 +1,11 @@
 package com.spectu.game.scenes;
 
 import com.spectu.game.Main;
+import com.spectu.game.categories.Assassin;
+import com.spectu.game.categories.Fighter;
+import com.spectu.game.categories.Wizard;
 import com.spectu.game.entities.Player;
+import com.spectu.game.objects.Item;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -14,11 +18,18 @@ import javafx.stage.Stage;
 
 public class CreateCharacter implements RPGScene {
 
+    int number = 30;
+
     public static ImageView playerCharacter;
     public static ImageView playerSpecialWeapon;
     public static String playerAbility;
     public static String playerSpecialWeaponDescription;
     public static Player player;
+    public static Fighter fighterClass;
+    public static Assassin assassinClass;
+    public static Wizard wizardClass;
+
+    String playerClass;
 
     AnchorPane rootCreateCharacter;
     Scene sceneCreateCharacter;
@@ -54,6 +65,10 @@ public class CreateCharacter implements RPGScene {
 
     @Override
     public Scene create(Stage stage) {
+
+        fighterClass = new Fighter();
+        assassinClass = new Assassin();
+        wizardClass = new Wizard();
 
         nullPlayerName = new Label("You have to put a name to be able to advance.");
         nullPlayerName.setVisible(false);
@@ -94,9 +109,7 @@ public class CreateCharacter implements RPGScene {
         characterValueName.setLayoutX(30);
         characterValueName.setLayoutY(80);
 
-        player = new Player(characterValueName.getText());
-
-        fighter = player.fighter.getCharacterImage();
+        fighter = fighterClass.getCharacterImage();
         fighter.setVisible(false);
         fighter.setLayoutX(30);
         fighter.setLayoutY(320);
@@ -113,12 +126,12 @@ public class CreateCharacter implements RPGScene {
         descriptionWeaponFighter.setLayoutX(20);
         descriptionWeaponFighter.setLayoutY(250);
 
-        fighterSpecialWeapon = player.fighter.getWeaponImage();
+        fighterSpecialWeapon = fighterClass.getWeaponImage();
         fighterSpecialWeapon.setVisible(false);
         fighterSpecialWeapon.setLayoutX(160);
         fighterSpecialWeapon.setLayoutY(320);
 
-        assassin = player.assassin.getCharacterImage();
+        assassin = assassinClass.getCharacterImage();
         assassin.setVisible(false);
         assassin.setLayoutX(30);
         assassin.setLayoutY(320);
@@ -135,12 +148,12 @@ public class CreateCharacter implements RPGScene {
         descriptionWeaponAssassin.setLayoutX(20);
         descriptionWeaponAssassin.setLayoutY(250);
 
-        assassinSpecialWeapon = player.assassin.getWeaponImage();
+        assassinSpecialWeapon = assassinClass.getWeaponImage();
         assassinSpecialWeapon.setVisible(false);
         assassinSpecialWeapon.setLayoutX(160);
         assassinSpecialWeapon.setLayoutY(320);
 
-        wizard = player.wizard.getCharacterImage();
+        wizard = wizardClass.getCharacterImage();
         wizard.setVisible(false);
         wizard.setLayoutX(30);
         wizard.setLayoutY(320);
@@ -157,7 +170,7 @@ public class CreateCharacter implements RPGScene {
         descriptionWeaponWizard.setLayoutX(20);
         descriptionWeaponWizard.setLayoutY(250);
 
-        wizardSpecialWeapon = player.wizard.getWeaponImage();
+        wizardSpecialWeapon = wizardClass.getWeaponImage();
         wizardSpecialWeapon.setVisible(false);
         wizardSpecialWeapon.setLayoutX(180);
         wizardSpecialWeapon.setLayoutY(330);
@@ -172,8 +185,7 @@ public class CreateCharacter implements RPGScene {
             Object selectedItem = characterClass.getSelectionModel().getSelectedItem();
 
             if (selectedItem.equals("Fighter")) {
-                player.playerClass = "Fighter";
-                System.out.println(player.playerClass);
+                playerClass = "Fighter";
                 character.setVisible(true);
                 specialWeapon.setVisible(true);
 
@@ -194,8 +206,7 @@ public class CreateCharacter implements RPGScene {
                 return;
             }
             if (selectedItem.equals("Assassin")) {
-                player.playerClass = "Assassin";
-                System.out.println(player.playerClass);
+                playerClass = "Assassin";
                 character.setVisible(true);
                 specialWeapon.setVisible(true);
 
@@ -216,8 +227,7 @@ public class CreateCharacter implements RPGScene {
                 return;
             }
             if (selectedItem.equals("Wizard")) {
-                player.playerClass = "Wizard";
-                System.out.println(player.playerClass);
+                playerClass = "Wizard";
                 character.setVisible(true);
                 specialWeapon.setVisible(true);
 
@@ -244,7 +254,8 @@ public class CreateCharacter implements RPGScene {
         createCharacter.setLayoutX(20);
         createCharacter.setLayoutY(400);
         createCharacter.setOnAction((e) -> {
-            player.setName(characterValueName.getText());
+            player = new Player(characterValueName.getText(), playerClass);
+
             if (player.name == null || player.name.equals("")) {
 
                 nullPlayerName.setVisible(true);
@@ -277,9 +288,7 @@ public class CreateCharacter implements RPGScene {
                     playerSpecialWeaponDescription = descriptionWeaponWizard.getText();
 
                 }
-                player.specialWeapon();
                 Main.show(GameMenu.class);
-
             }
         });
 

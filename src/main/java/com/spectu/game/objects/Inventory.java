@@ -19,14 +19,11 @@ import java.util.Map;
 public class Inventory {
 
     public Item[] items;
-    public Weapon[] weapons;
     public Label itemsNameAndAmount;
     public ImageView itemsImageView;
     public Scene sceneChecker;
-
     public Map<Item, Pair<ImageView, Label>> map;
 
-    Item item;
 
     public Inventory(Item...items) {
         this.items = items;
@@ -37,7 +34,7 @@ public class Inventory {
         int e = 70;
         int a = 50;
         for (int i = 0; i < items.length; i++) {
-                item = items[i];
+               Item item = items[i];
                     itemsImageView = item.imageItem();
 
                     itemsNameAndAmount = new Label(item.name + " " + item.amount + "/50");

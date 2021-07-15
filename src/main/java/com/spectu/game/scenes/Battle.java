@@ -1,8 +1,6 @@
 package com.spectu.game.scenes;
 
 import com.spectu.game.Main;
-import com.spectu.game.locations.CliffMine;
-import com.spectu.game.locations.Dungeon;
 import com.spectu.game.locations.Location;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;

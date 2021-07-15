@@ -18,25 +18,28 @@ public class Player extends Entity {
 
     public Inventory inventory;
     public String playerClass;
-    public Fighter fighter = new Fighter();
-    public Assassin assassin = new Assassin();
-    public Wizard wizard = new Wizard();
     public ImageView playerImageView;
+    public Item specialWeapon;
 
-    public Player(String name) {
-        super(name, 50);
+    public Player(String name, String playerClass) {
+        super(name, 100);
+        this.playerClass = playerClass;
         this.inventory = new Inventory(new HealingPotion(), new EscapePotion(), new EnchantedKnife(), new SpectralHoz(), new MythrilSword(), specialWeapon(), new Mythril(), new Spectral());
+    }
+
+    public void setPlayerClass(String playerClass){
+        this.playerClass = playerClass;
     }
 
     public ImageView getPlayerCharacter(){
         if(playerClass.equals("Fighter")){
-            playerImageView = fighter.characterImageView;
+            playerImageView = CreateCharacter.fighterClass.characterImageView;
             return playerImageView;
         }else if(playerClass.equals("Assassin")){
-            playerImageView = assassin.characterImageView;
+            playerImageView = CreateCharacter.assassinClass.characterImageView;
             return playerImageView;
         }else if(playerClass.equals("Wizard")){
-            playerImageView = wizard.characterImageView;
+            playerImageView = CreateCharacter.wizardClass.characterImageView;
             return playerImageView;
         }
         throw new RuntimeException("the character class could not be determined");
@@ -80,11 +83,11 @@ public class Player extends Entity {
 
 
     public Item specialWeapon(){
-        if(playerClass.equals("Fighter")){
+        if(this.playerClass.equals("Fighter")){
             return new GoldenSpear();
-        }else if(playerClass.equals("Assassin")){
+        }else if(this.playerClass.equals("Assassin")){
             return new EnchantedIceSword();
-        }else if(playerClass.equals("Wizard")){
+        }else if(this.playerClass.equals("Wizard")){
             return new DiabolicCode();
         }
         throw new RuntimeException("The weapon cant be determinate.");

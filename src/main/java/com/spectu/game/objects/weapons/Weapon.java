@@ -1,5 +1,4 @@
 package com.spectu.game.objects.weapons;
-
 import com.spectu.game.Main;
 import com.spectu.game.locations.Location;
 import com.spectu.game.objects.Item;
