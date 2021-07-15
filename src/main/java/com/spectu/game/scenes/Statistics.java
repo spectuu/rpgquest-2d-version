@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
 
@@ -15,8 +16,10 @@ public class Statistics implements RPGScene {
 
     public static AnchorPane rootStatistics;
     public static Scene sceneStatistics;
+    public static HBox inventory;
 
     Button back;
+
     Label playerName;
     Label playerClass;
     Label character;
@@ -24,7 +27,7 @@ public class Statistics implements RPGScene {
     Label playerAbility;
     Label playerSpecialWeaponDescription;
     Label Equipment;
-    Label itemsWarning;
+
     ImageView playerCharacter;
     ImageView playerSpecialWeapon;
 
@@ -72,12 +75,6 @@ public class Statistics implements RPGScene {
         playerAbility.setLayoutX(30);
         playerAbility.setLayoutY(300);
 
-        itemsWarning = new Label("You dont have items.");
-        itemsWarning.setFont(new Font(15));
-        itemsWarning.setVisible(false);
-        itemsWarning.setLayoutX(80);
-        itemsWarning.setLayoutY(400);
-
         Equipment = new Label("Objects and basic Weapons: ");
         Equipment.setFont(new Font(15));
         Equipment.setLayoutX(30);
@@ -87,6 +84,9 @@ public class Statistics implements RPGScene {
         playerSpecialWeapon.setLayoutX(155);
         playerSpecialWeapon.setLayoutY(150);
 
+        inventory = new HBox();
+        inventory.setLayoutX(30);
+        inventory.setLayoutY(450);
 
         back = new Button("Back");
         back.setFont(new Font(15));
@@ -100,9 +100,11 @@ public class Statistics implements RPGScene {
         sceneStatistics = new Scene(rootStatistics, 1200, 530);
         CreateCharacter.player.inventory.sceneChecker = Statistics.sceneStatistics;
         CreateCharacter.player.inventory.showInventory();
+        rootStatistics.getChildren().add(inventory);
         CreateCharacter.player.inventory.getHealingPotion().onClick();
         CreateCharacter.player.inventory.getMythril().onClick();
         CreateCharacter.player.inventory.getSpectral().onClick();
+        CreateCharacter.player.inventory.specialWeapon().weaponLabelInventory();
         CreateCharacter.player.inventory.getMythrilSword().weaponLabelInventory();
         CreateCharacter.player.inventory.getSpectralHoz().weaponLabelInventory();
         rootStatistics.getChildren().add(playerName);
@@ -116,7 +118,6 @@ public class Statistics implements RPGScene {
         rootStatistics.getChildren().add(playerSpecialWeapon);
         rootStatistics.getChildren().add(specialWeapon);
         rootStatistics.getChildren().add(playerSpecialWeaponDescription);
-        rootStatistics.getChildren().add(itemsWarning);
         stage.setScene(sceneStatistics);
 
         return sceneStatistics;

@@ -1,5 +1,6 @@
 package com.spectu.game.objects;
 
+import com.spectu.game.entities.Player;
 import com.spectu.game.objects.weapons.*;
 import com.spectu.game.scenes.Battle;
 import com.spectu.game.scenes.CreateCharacter;
@@ -50,7 +51,7 @@ public class Inventory {
 
                         e += 170;
                         a += 170;
-                        Statistics.rootStatistics.getChildren().addAll(itemsImageView, itemsNameAndAmount);
+                        Statistics.inventory.getChildren().addAll(itemsImageView, itemsNameAndAmount);
 
                     }else if(sceneChecker == Battle.sceneBattle){
 
@@ -127,6 +128,10 @@ public class Inventory {
 
     public DiabolicCode getDiabolicCode(){
         return (DiabolicCode) getByName("Diabolic Code");
+    }
+
+    public Weapon specialWeapon(){
+        return (Weapon) getByName(Player.specialWeapon.name);
     }
 
     public Item getByName(String name) {

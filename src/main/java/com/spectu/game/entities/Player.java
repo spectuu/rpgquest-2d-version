@@ -19,7 +19,7 @@ public class Player extends Entity {
     public Inventory inventory;
     public String playerClass;
     public ImageView playerImageView;
-    public Item specialWeapon;
+    public static Weapon specialWeapon;
 
     public Player(String name, String playerClass) {
         super(name, 100);
@@ -81,14 +81,16 @@ public class Player extends Entity {
         }
     }
 
-
-    public Item specialWeapon(){
+    public Weapon specialWeapon(){
         if(this.playerClass.equals("Fighter")){
-            return new GoldenSpear();
+            specialWeapon = new GoldenSpear();
+            return specialWeapon;
         }else if(this.playerClass.equals("Assassin")){
-            return new EnchantedIceSword();
+            specialWeapon = new EnchantedIceSword();
+            return specialWeapon;
         }else if(this.playerClass.equals("Wizard")){
-            return new DiabolicCode();
+            specialWeapon = new DiabolicCode();
+            return specialWeapon;
         }
         throw new RuntimeException("The weapon cant be determinate.");
     }
