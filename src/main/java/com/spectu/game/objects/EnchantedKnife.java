@@ -38,6 +38,7 @@ public class EnchantedKnife extends Item {
 
                 }else if(Location.enemy.heal <= 0){
                     Location.enemy.heal = 0;
+                    Location.enemy = null;
                     Main.show(Booty.class);
                 }
           });

@@ -21,8 +21,6 @@ public class Battle implements RPGScene{
    public static Scene sceneBattle;
    public static Label playerHeal;
    public static Label enemyHeal;
-   public static StackPane inventoryStackPane;
-   public static ScrollPane inventoryScrollPane;
    public static HBox inventory;
 
     Image backgroundImage;
@@ -102,15 +100,6 @@ public class Battle implements RPGScene{
             backgroundImageView.setFitHeight(530);
         }
 
-
-        inventoryStackPane = new StackPane();
-        inventoryStackPane.setLayoutX(10);
-        inventoryStackPane.setLayoutY(430);
-
-        inventoryScrollPane = new ScrollPane();
-        inventoryScrollPane.setLayoutX(10);
-        inventoryScrollPane.setLayoutY(430);
-
         inventory = new HBox();
         inventory.setLayoutX(10);
         inventory.setLayoutY(420);
@@ -122,9 +111,7 @@ public class Battle implements RPGScene{
         rootBattle.getChildren().add(playerHeal);
         rootBattle.getChildren().add(enemyHeal);
         CreateCharacter.player.inventory.showInventory();
-        inventoryStackPane.getChildren().add(inventoryScrollPane);
-        inventoryStackPane.getChildren().add(inventory);
-        rootBattle.getChildren().add(inventoryStackPane);
+        rootBattle.getChildren().add(inventory);
         CreateCharacter.player.inventory.getHealingPotion().onClick();
         CreateCharacter.player.inventory.getEnchantedKnife().onClick();
         CreateCharacter.player.inventory.getEscapePotion().onClick();
@@ -132,9 +119,10 @@ public class Battle implements RPGScene{
         CreateCharacter.player.inventory.getSpectral().onClick();
         CreateCharacter.player.inventory.getMythrilSword().weaponLabelInventory();
         CreateCharacter.player.inventory.getSpectralHoz().weaponLabelInventory();
-        CreateCharacter.player.inventory.getSpecialWeapon().weaponLabelInventory();
+        CreateCharacter.player.inventory.getSpecialWeapon().specialWeaponLabel();
         CreateCharacter.player.inventory.getMythrilSword().attackEnemy();
         CreateCharacter.player.inventory.getSpectralHoz().attackEnemy();
+        CreateCharacter.player.inventory.getSpecialWeapon().attackEnemy();
         stage.setScene(sceneBattle);
 
         return sceneBattle;

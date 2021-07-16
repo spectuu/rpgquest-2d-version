@@ -28,7 +28,6 @@ public class ShadowStalker extends Enemy{
         Label label = CreateCharacter.player.inventory.getLabel(CreateCharacter.player.inventory.getEscapePotion());
         label.setText(CreateCharacter.player.inventory.getEscapePotion().name + " " + CreateCharacter.player.inventory.getEscapePotion().amount + "/50");
     }
-
     @Override
     public void chanceEnemy(){
         int p = ThreadLocalRandom.current().nextInt(1, (1 + 100));

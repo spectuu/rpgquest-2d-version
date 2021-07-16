@@ -115,7 +115,7 @@ public class Statistics implements RPGScene {
         CreateCharacter.player.inventory.getHealingPotion().onClick();
         CreateCharacter.player.inventory.getMythril().onClick();
         CreateCharacter.player.inventory.getSpectral().onClick();
-        CreateCharacter.player.inventory.getSpecialWeapon().weaponLabelInventory();
+        CreateCharacter.player.inventory.getSpecialWeapon().specialWeaponLabel();
         CreateCharacter.player.inventory.getMythrilSword().weaponLabelInventory();
         CreateCharacter.player.inventory.getSpectralHoz().weaponLabelInventory();
         inventoryStackPane.getChildren().add(inventoryScrollPane);

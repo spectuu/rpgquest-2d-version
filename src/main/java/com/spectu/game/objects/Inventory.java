@@ -122,18 +122,6 @@ public class Inventory {
         return (SpectralHoz) getByName("Spectral Hoz");
     }
 
-    public GoldenSpear getGoldenSpear(){
-        return (GoldenSpear) getByName("Golden Spear");
-    }
-
-    public EnchantedIceSword getEnchantedIceSword(){
-        return (EnchantedIceSword) getByName("Enchanted Ice Sword");
-    }
-
-    public DiabolicCode getDiabolicCode(){
-        return (DiabolicCode) getByName("Diabolic Code");
-    }
-
     public Weapon getSpecialWeapon(){
         return (Weapon) getByName(Player.specialWeapon.name);
     }

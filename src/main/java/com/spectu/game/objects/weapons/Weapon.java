@@ -38,6 +38,9 @@ public class Weapon extends Item {
             if(durability > 0){
                 Location.enemy.heal -= damage;
                 durability -= 15;
+                if(CreateCharacter.player.inventory.getSpecialWeapon().amount < 100){
+                    CreateCharacter.player.inventory.getSpecialWeapon().amount = 100;
+                }
                 CreateCharacter.player.abilityCharacter();
                 CreateCharacter.player.inventory.getMythrilSword().weaponLabelInventory();
                 CreateCharacter.player.inventory.getSpectralHoz().weaponLabelInventory();
@@ -51,6 +54,7 @@ public class Weapon extends Item {
 
                 }else if(Location.enemy.heal <= 0){
                     Location.enemy.heal = 0;
+                    Location.enemy = null;
                     Main.show(Booty.class);
                 }
             }
@@ -72,4 +76,13 @@ public class Weapon extends Item {
         ImageView imageView = CreateCharacter.player.inventory.getImageView(this);
         imageView.setVisible(false);
     }
+
+    public void specialWeaponLabel(){
+        if(durability < 0){
+            durability = 0;
+        }
+        Label label = CreateCharacter.player.inventory.getLabel(this);
+        label.setText(this.name + "\n Damage: " + this.damage);
+    }
+
 }

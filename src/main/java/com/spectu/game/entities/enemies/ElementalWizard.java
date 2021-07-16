@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ElementalWizard extends Enemy{
 
     public ElementalWizard() {
-        super("Elemental Wizard", 200, 200,35, "ElementalWizard.png");
+        super("Elemental Wizard", 200, 200,35, "ElementalWizard.gif");
     }
 
     public void ElementOfFire(){
