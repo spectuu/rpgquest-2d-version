@@ -15,8 +15,11 @@ public class GameMenu implements RPGScene {
 
     Scene sceneGameMenu;
     AnchorPane rootGameMenu;
+
     Button statistics;
     Button map;
+    Button saveGame;
+
     Label title;
 
     @Override
@@ -41,6 +44,14 @@ public class GameMenu implements RPGScene {
         map.setLayoutY(160);
         map.setOnAction((e) -> {
             Main.show(World.class);
+        });
+
+        saveGame = new Button("Save Game.");
+        saveGame.setFont(new Font(15));
+        saveGame.setLayoutX(20);
+        saveGame.setLayoutY(230);
+        saveGame.setOnAction((e) -> {
+
         });
 
         rootGameMenu = new AnchorPane();
