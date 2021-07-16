@@ -4,9 +4,12 @@ import com.spectu.game.Main;
 import com.spectu.game.locations.Location;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -18,6 +21,9 @@ public class Battle implements RPGScene{
    public static Scene sceneBattle;
    public static Label playerHeal;
    public static Label enemyHeal;
+   public static StackPane inventoryStackPane;
+   public static ScrollPane inventoryScrollPane;
+   public static HBox inventory;
 
     Image backgroundImage;
     ImageView backgroundImageView;
@@ -95,6 +101,20 @@ public class Battle implements RPGScene{
             backgroundImageView.setFitWidth(1200);
             backgroundImageView.setFitHeight(530);
         }
+
+
+        inventoryStackPane = new StackPane();
+        inventoryStackPane.setLayoutX(10);
+        inventoryStackPane.setLayoutY(430);
+
+        inventoryScrollPane = new ScrollPane();
+        inventoryScrollPane.setLayoutX(10);
+        inventoryScrollPane.setLayoutY(430);
+
+        inventory = new HBox();
+        inventory.setLayoutX(10);
+        inventory.setLayoutY(420);
+
         CreateCharacter.player.inventory.sceneChecker = Battle.sceneBattle;
         rootBattle.getChildren().add(backgroundImageView);
         rootBattle.getChildren().add(playerCharacter);
@@ -102,6 +122,9 @@ public class Battle implements RPGScene{
         rootBattle.getChildren().add(playerHeal);
         rootBattle.getChildren().add(enemyHeal);
         CreateCharacter.player.inventory.showInventory();
+        inventoryStackPane.getChildren().add(inventoryScrollPane);
+        inventoryStackPane.getChildren().add(inventory);
+        rootBattle.getChildren().add(inventoryStackPane);
         CreateCharacter.player.inventory.getHealingPotion().onClick();
         CreateCharacter.player.inventory.getEnchantedKnife().onClick();
         CreateCharacter.player.inventory.getEscapePotion().onClick();
@@ -109,6 +132,7 @@ public class Battle implements RPGScene{
         CreateCharacter.player.inventory.getSpectral().onClick();
         CreateCharacter.player.inventory.getMythrilSword().weaponLabelInventory();
         CreateCharacter.player.inventory.getSpectralHoz().weaponLabelInventory();
+        CreateCharacter.player.inventory.getSpecialWeapon().weaponLabelInventory();
         CreateCharacter.player.inventory.getMythrilSword().attackEnemy();
         CreateCharacter.player.inventory.getSpectralHoz().attackEnemy();
         stage.setScene(sceneBattle);

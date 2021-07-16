@@ -11,7 +11,7 @@ public class CliffGolem extends Enemy{
 
     @Override
     public void chanceEnemy(){
-        p = ThreadLocalRandom.current().nextInt(1,  (1 + 100));
+       int p = ThreadLocalRandom.current().nextInt(1,  (1 + 100));
         if(p == 50){
            Location.enemy = new CliffGolem();
             System.out.println(Location.enemy.name);

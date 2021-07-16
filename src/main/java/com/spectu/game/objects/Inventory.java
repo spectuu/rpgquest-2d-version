@@ -7,8 +7,11 @@ import com.spectu.game.scenes.CreateCharacter;
 import com.spectu.game.scenes.Statistics;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Pair;
@@ -51,6 +54,7 @@ public class Inventory {
 
                         e += 170;
                         a += 170;
+
                         Statistics.inventory.getChildren().addAll(itemsImageView, itemsNameAndAmount);
 
                     }else if(sceneChecker == Battle.sceneBattle){
@@ -130,7 +134,7 @@ public class Inventory {
         return (DiabolicCode) getByName("Diabolic Code");
     }
 
-    public Weapon specialWeapon(){
+    public Weapon getSpecialWeapon(){
         return (Weapon) getByName(Player.specialWeapon.name);
     }
 

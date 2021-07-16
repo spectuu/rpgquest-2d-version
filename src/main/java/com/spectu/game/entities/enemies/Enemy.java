@@ -11,7 +11,6 @@ public class Enemy extends Entity{
 
     public int damage;
     public int healMax;
-    public int p;
     public String enemyImage;
 
 
@@ -34,6 +33,6 @@ public class Enemy extends Entity{
     }
 
     public void chanceEnemy(){
-    p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
+
     }
 }

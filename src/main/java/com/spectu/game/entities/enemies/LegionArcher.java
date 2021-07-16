@@ -12,7 +12,7 @@ public class LegionArcher extends Enemy{
 
     @Override
     public void chanceEnemy(){
-        p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
+        int p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
         if(p == 45){
             Location.enemy = new LegionArcher();
             System.out.println(Location.enemy);

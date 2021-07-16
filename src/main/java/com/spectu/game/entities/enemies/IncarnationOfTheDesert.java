@@ -26,7 +26,7 @@ public class IncarnationOfTheDesert extends Enemy{
 
     @Override
     public void chanceEnemy(){
-        p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
+        int p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
         if(p == 13){
             Location.enemy = new IncarnationOfTheDesert();
             System.out.println(Location.enemy);

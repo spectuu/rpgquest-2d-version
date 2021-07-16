@@ -12,7 +12,7 @@ public class VictoriousPaladin extends Enemy{
 
     @Override
     public void chanceEnemy(){
-        p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
+        int p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
         if(p == 24) {
             Location.enemy = new VictoriousPaladin();
             System.out.println(Location.enemy.name);

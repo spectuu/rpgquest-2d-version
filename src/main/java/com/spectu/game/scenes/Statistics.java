@@ -4,9 +4,11 @@ import com.spectu.game.Main;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
 
@@ -16,6 +18,8 @@ public class Statistics implements RPGScene {
 
     public static AnchorPane rootStatistics;
     public static Scene sceneStatistics;
+    public static StackPane inventoryStackPane;
+    public static ScrollPane inventoryScrollPane;
     public static HBox inventory;
 
     Button back;
@@ -84,9 +88,17 @@ public class Statistics implements RPGScene {
         playerSpecialWeapon.setLayoutX(155);
         playerSpecialWeapon.setLayoutY(150);
 
+        inventoryStackPane = new StackPane();
+        inventoryStackPane.setLayoutX(10);
+        inventoryStackPane.setLayoutY(430);
+
+        inventoryScrollPane = new ScrollPane();
+        inventoryScrollPane.setLayoutX(10);
+        inventoryScrollPane.setLayoutY(430);
+
         inventory = new HBox();
-        inventory.setLayoutX(30);
-        inventory.setLayoutY(450);
+        inventory.setLayoutX(10);
+        inventory.setLayoutY(420);
 
         back = new Button("Back");
         back.setFont(new Font(15));
@@ -100,13 +112,15 @@ public class Statistics implements RPGScene {
         sceneStatistics = new Scene(rootStatistics, 1200, 530);
         CreateCharacter.player.inventory.sceneChecker = Statistics.sceneStatistics;
         CreateCharacter.player.inventory.showInventory();
-        rootStatistics.getChildren().add(inventory);
         CreateCharacter.player.inventory.getHealingPotion().onClick();
         CreateCharacter.player.inventory.getMythril().onClick();
         CreateCharacter.player.inventory.getSpectral().onClick();
-        CreateCharacter.player.inventory.specialWeapon().weaponLabelInventory();
+        CreateCharacter.player.inventory.getSpecialWeapon().weaponLabelInventory();
         CreateCharacter.player.inventory.getMythrilSword().weaponLabelInventory();
         CreateCharacter.player.inventory.getSpectralHoz().weaponLabelInventory();
+        inventoryStackPane.getChildren().add(inventoryScrollPane);
+        inventoryStackPane.getChildren().add(inventory);
+        rootStatistics.getChildren().add(inventoryStackPane);
         rootStatistics.getChildren().add(playerName);
         rootStatistics.getChildren().add(playerHeal);
         rootStatistics.getChildren().add(playerClass);
