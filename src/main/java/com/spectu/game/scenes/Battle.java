@@ -32,7 +32,7 @@ public class Battle implements RPGScene{
     public Scene create(Stage stage) {
 
         rootBattle = new AnchorPane();
-        sceneBattle = new Scene(rootBattle, 1200, 530);
+        sceneBattle = new Scene(rootBattle, 1024, 530);
 
         playerHeal = new Label(CreateCharacter.player.name + " " + CreateCharacter.player.heal + "/100");
         playerHeal.setFont(new Font(15));

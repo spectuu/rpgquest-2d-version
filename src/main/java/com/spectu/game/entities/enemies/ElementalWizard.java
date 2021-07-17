@@ -42,7 +42,7 @@ public class ElementalWizard extends Enemy{
 
     @Override
     public void chanceEnemy(){
-        int p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
+        int p = ThreadLocalRandom.current().nextInt(1,  (1 + 100));
         if(p == 5){
             Location.enemy = new ElementalWizard();
             System.out.println(Location.enemy.name);

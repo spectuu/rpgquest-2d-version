@@ -20,7 +20,7 @@ public class DeathScene implements RPGScene{
     public Scene create(Stage stage) {
 
         rootDeathScene = new AnchorPane();
-        deathScene = new Scene(rootDeathScene, 1200, 530);
+        deathScene = new Scene(rootDeathScene, 1024, 530);
 
         title = new Label("You have died click the button below to return to the main menu.");
         title.setFont(new Font(20));

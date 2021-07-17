@@ -31,7 +31,6 @@ public class Item {
 
     public Label booty(){
         int p = ThreadLocalRandom.current().nextInt((1 + 1) + (1 + 15));
-
         amount += p;
         if(amount > 50){
             amount = 50;

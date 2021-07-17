@@ -40,6 +40,9 @@ public class World implements RPGScene{
         cliffMine = new CliffMine();
         dungeon = new Dungeon();
 
+        rootWorld = new AnchorPane();
+        sceneWorld = new Scene(rootWorld, 1024, 530);
+
         iconCliffMine = cliffMine.iconLocation();
         iconCliffMine.setLayoutX(800);
         iconCliffMine.setLayoutY(400);
@@ -88,9 +91,6 @@ public class World implements RPGScene{
         back.setOnAction((e) -> {
           Main.show(GameMenu.class);
         });
-
-        rootWorld = new AnchorPane();
-        sceneWorld = new Scene(rootWorld, 1024, 530);
 
         rootWorld.getChildren().add(mapImageView);
         rootWorld.getChildren().add(iconCliffMine);

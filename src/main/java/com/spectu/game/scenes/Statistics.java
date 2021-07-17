@@ -18,7 +18,6 @@ public class Statistics implements RPGScene {
 
     public static AnchorPane rootStatistics;
     public static Scene sceneStatistics;
-    public static StackPane inventoryStackPane;
     public static ScrollPane inventoryScrollPane;
     public static HBox inventory;
 
@@ -88,10 +87,6 @@ public class Statistics implements RPGScene {
         playerSpecialWeapon.setLayoutX(155);
         playerSpecialWeapon.setLayoutY(150);
 
-        inventoryStackPane = new StackPane();
-        inventoryStackPane.setLayoutX(10);
-        inventoryStackPane.setLayoutY(430);
-
         inventoryScrollPane = new ScrollPane();
         inventoryScrollPane.setLayoutX(10);
         inventoryScrollPane.setLayoutY(430);
@@ -109,7 +104,7 @@ public class Statistics implements RPGScene {
         });
 
         rootStatistics = new AnchorPane();
-        sceneStatistics = new Scene(rootStatistics, 1200, 530);
+        sceneStatistics = new Scene(rootStatistics, 1024, 530);
         CreateCharacter.player.inventory.sceneChecker = Statistics.sceneStatistics;
         CreateCharacter.player.inventory.showInventory();
         CreateCharacter.player.inventory.getHealingPotion().onClick();
@@ -118,9 +113,6 @@ public class Statistics implements RPGScene {
         CreateCharacter.player.inventory.getSpecialWeapon().specialWeaponLabel();
         CreateCharacter.player.inventory.getMythrilSword().weaponLabelInventory();
         CreateCharacter.player.inventory.getSpectralHoz().weaponLabelInventory();
-        inventoryStackPane.getChildren().add(inventoryScrollPane);
-        inventoryStackPane.getChildren().add(inventory);
-        rootStatistics.getChildren().add(inventoryStackPane);
         rootStatistics.getChildren().add(playerName);
         rootStatistics.getChildren().add(playerHeal);
         rootStatistics.getChildren().add(playerClass);
@@ -132,7 +124,14 @@ public class Statistics implements RPGScene {
         rootStatistics.getChildren().add(playerSpecialWeapon);
         rootStatistics.getChildren().add(specialWeapon);
         rootStatistics.getChildren().add(playerSpecialWeaponDescription);
+        inventoryScrollPane.setContent(inventory);
+        //inventoryScrollPane.get
+        rootStatistics.getChildren().add(inventoryScrollPane);
+        rootStatistics.getChildren().add(inventory);
         stage.setScene(sceneStatistics);
+
+        inventoryScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        inventoryScrollPane.setMaxWidth(1000);
 
         return sceneStatistics;
     }

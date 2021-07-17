@@ -1,0 +1,12 @@
+Player Name:SADSA
+Player Heal:77
+Player Class:Assassin
+Inventory And Weapons:
+Healing Potion:48
+Escape Potion:50
+Enchanted Knife:43
+Spectral Hoz:1
+Mythril Sword:1
+Enchanted Ice Sword:100
+Mythril:50
+Spectral:50

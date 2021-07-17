@@ -27,10 +27,6 @@ public class Player extends Entity {
         this.inventory = new Inventory(new HealingPotion(), new EscapePotion(), new EnchantedKnife(), new SpectralHoz(), new MythrilSword(), specialWeapon(), new Mythril(), new Spectral());
     }
 
-    public void setPlayerClass(String playerClass){
-        this.playerClass = playerClass;
-    }
-
     public ImageView getPlayerCharacter(){
         if(playerClass.equals("Fighter")){
             playerImageView = CreateCharacter.fighterClass.characterImageView;

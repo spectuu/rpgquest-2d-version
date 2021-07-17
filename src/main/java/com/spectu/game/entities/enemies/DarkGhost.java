@@ -25,7 +25,7 @@ public class DarkGhost extends Enemy{
 
     @Override
     public void chanceEnemy(){
-        int p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
+        int p = ThreadLocalRandom.current().nextInt(1,  (1 + 100));
         if(p == 15){
             Location.enemy = new DarkGhost();
             System.out.println(Location.enemy.name);

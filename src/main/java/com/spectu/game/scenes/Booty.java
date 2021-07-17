@@ -32,13 +32,13 @@ public class Booty implements RPGScene{
     @Override
     public Scene create(Stage stage) {
 
-        rootBooty = new AnchorPane();
-        sceneBooty = new Scene(rootBooty, 1200, 530);
-
         titleBooty = new Label("Booty: ");
         titleBooty.setFont(new Font(20));
         titleBooty.setLayoutX(50);
         titleBooty.setLayoutY(40);
+
+        rootBooty = new AnchorPane();
+        sceneBooty = new Scene(rootBooty, 1024, 530);
 
         if(World.locationBooty.equals("Cliff Mine")) {
            mythrilObtained = CreateCharacter.player.inventory.getMythril().booty();
@@ -63,6 +63,7 @@ public class Booty implements RPGScene{
             rootBooty.getChildren().add(spectralImageView);
 
         }else if(World.locationBooty.equals("Dungeon")){
+
             healingPotionObtained = CreateCharacter.player.inventory.getHealingPotion().booty();
             healingPotionObtained.setLayoutX(50);
             healingPotionObtained.setLayoutY(95);

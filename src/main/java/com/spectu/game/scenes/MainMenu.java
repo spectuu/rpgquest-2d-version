@@ -53,7 +53,7 @@ public class MainMenu implements RPGScene {
         test.setLayoutY(5);
 
         rootMainMenu = new AnchorPane();
-        sceneMainMenu = new Scene(rootMainMenu, 1200, 530);
+        sceneMainMenu = new Scene(rootMainMenu, 1024, 530);
         rootMainMenu.getChildren().add(startNewGame);
         rootMainMenu.getChildren().add(savedGame);
         rootMainMenu.getChildren().add(title);

@@ -15,8 +15,8 @@ public class ShadowStalker extends Enemy{
     public void ShadowHook(){
         int p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
         if(p == 13){
-            int ShadowChest;
-            ShadowChest = CreateCharacter.player.inventory.getEscapePotion().amount;
+            int ShadowChest = 0;
+            ShadowChest = ShadowChest + CreateCharacter.player.inventory.getEscapePotion().amount;
             CreateCharacter.player.inventory.getEscapePotion().amount = 0;
         }
     }
@@ -30,7 +30,7 @@ public class ShadowStalker extends Enemy{
     }
     @Override
     public void chanceEnemy(){
-        int p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
+        int p = ThreadLocalRandom.current().nextInt(1,  (1 + 100));
         if(p == 1){
             Location.enemy = new ShadowStalker();
             System.out.println(Location.enemy);

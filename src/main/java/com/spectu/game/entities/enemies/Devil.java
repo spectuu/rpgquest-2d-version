@@ -12,7 +12,7 @@ public class Devil extends Enemy{
 
     @Override
     public void chanceEnemy(){
-        int p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
+        int p = ThreadLocalRandom.current().nextInt(1,  (1 + 100));
         if(p == 70){
             Location.enemy = new Devil();
             System.out.println(Location.enemy.name);

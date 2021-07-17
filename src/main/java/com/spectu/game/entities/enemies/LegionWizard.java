@@ -12,8 +12,8 @@ public class LegionWizard extends Enemy{
 
     @Override
     public void chanceEnemy(){
-        int p = ThreadLocalRandom.current().nextInt(1, (1 + 100));
-        if(p == 100){
+        int p = ThreadLocalRandom.current().nextInt(1,  (1 + 100));
+        if(p == 20){
             Location.enemy = new LegionWizard();
             System.out.println(Location.enemy);
         }
