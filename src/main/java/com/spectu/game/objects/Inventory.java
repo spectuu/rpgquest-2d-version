@@ -28,7 +28,6 @@ public class Inventory {
     public Scene sceneChecker;
     public Map<Item, Pair<ImageView, Label>> map;
 
-
     public Inventory(Item...items) {
         this.items = items;
         this.map = new HashMap<>();

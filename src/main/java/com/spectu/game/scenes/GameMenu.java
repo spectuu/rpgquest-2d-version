@@ -43,8 +43,8 @@ public class GameMenu implements RPGScene {
         saveGameLabel = new Label("The game was successfully saved.");
         saveGameLabel.setFont(new Font(15));
         saveGameLabel.setVisible(false);
-        saveGameLabel.setLayoutX(80);
-        saveGameLabel.setLayoutY(160);
+        saveGameLabel.setLayoutX(130);
+        saveGameLabel.setLayoutY(230);
 
         map = new Button("Map.");
         map.setFont(new Font(15));

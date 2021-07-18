@@ -18,12 +18,6 @@ import javafx.stage.Stage;
 
 public class CreateCharacter implements RPGScene {
 
-    int number = 30;
-
-    public static ImageView playerCharacter;
-    public static ImageView playerSpecialWeapon;
-    public static String playerAbility;
-    public static String playerSpecialWeaponDescription;
     public static Player player;
     public static Fighter fighterClass;
     public static Assassin assassinClass;
@@ -266,28 +260,6 @@ public class CreateCharacter implements RPGScene {
 
             } else {
 
-                if (player.playerClass.equals("Fighter")) {
-
-                    playerCharacter = fighter;
-                    playerAbility = abilityFighter.getText();
-                    playerSpecialWeapon = fighterSpecialWeapon;
-                    playerSpecialWeaponDescription = descriptionWeaponFighter.getText();
-
-                } else if (player.playerClass.equals("Assassin")) {
-
-                    playerCharacter = assassin;
-                    playerAbility = abilityAssassin.getText();
-                    playerSpecialWeapon = assassinSpecialWeapon;
-                    playerSpecialWeaponDescription = descriptionWeaponAssassin.getText();
-
-                } else if (player.playerClass.equals("Wizard")) {
-
-                    playerCharacter = wizard;
-                    playerAbility = abilityWizard.getText();
-                    playerSpecialWeapon = wizardSpecialWeapon;
-                    playerSpecialWeaponDescription = descriptionWeaponWizard.getText();
-
-                }
                 Main.show(GameMenu.class);
             }
         });

@@ -1,6 +1,7 @@
 package com.spectu.game.scenes;
 
 import com.spectu.game.Main;
+import com.spectu.game.SavedGame;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -43,6 +44,9 @@ public class MainMenu implements RPGScene {
         savedGame.setFont(new Font(15));
         savedGame.setLayoutX(20);
         savedGame.setLayoutY(125);
+        savedGame.setOnAction((e) -> {
+            SavedGame.savedGame();
+        });
 
         Button test = new Button("Switch");
         test.setOnAction((e) -> {

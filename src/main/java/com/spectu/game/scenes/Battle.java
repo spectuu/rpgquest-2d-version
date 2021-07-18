@@ -4,12 +4,10 @@ import com.spectu.game.Main;
 import com.spectu.game.locations.Location;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -48,7 +46,7 @@ public class Battle implements RPGScene{
         enemyHeal.setLayoutX(700);
         enemyHeal.setLayoutY(150);
 
-        playerCharacter = CreateCharacter.player.getPlayerCharacter();
+        playerCharacter = CreateCharacter.player.getPlayerCharacterImageView();
         playerCharacter.setLayoutX(300);
         playerCharacter.setLayoutY(200);
         playerCharacter.setFitWidth(120);
@@ -84,7 +82,7 @@ public class Battle implements RPGScene{
             enemyHeal.setLayoutX(700);
             enemyHeal.setLayoutY(250);
 
-            playerCharacter = CreateCharacter.player.getPlayerCharacter();
+            playerCharacter = CreateCharacter.player.getPlayerCharacterImageView();
             playerCharacter.setLayoutX(300);
             playerCharacter.setLayoutY(315);
             playerCharacter.setFitWidth(120);

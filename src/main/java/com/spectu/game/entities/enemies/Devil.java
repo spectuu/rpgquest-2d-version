@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Devil extends Enemy{
 
     public Devil() {
-        super("Devil", 50, 50,14, "Devil.png");
+        super("Devil", 50, 50,14, "Devil.gif");
     }
 
     @Override

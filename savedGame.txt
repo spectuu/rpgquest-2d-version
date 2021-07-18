@@ -1,12 +1,16 @@
-Player Name:SADSA
-Player Heal:77
-Player Class:Assassin
+Player Name:Spectu
+Player Heal:72
+Player Class:Fighter
 Inventory And Weapons:
-Healing Potion:48
+Healing Potion:50
 Escape Potion:50
-Enchanted Knife:43
-Spectral Hoz:1
-Mythril Sword:1
-Enchanted Ice Sword:100
+Enchanted Knife:50
+Spectral Hoz:100
+Mythril Sword:100
+Golden Spear:100
 Mythril:50
 Spectral:50
+Durability Weapons:
+Mythril Sword:100
+Spectral Hoz:100
+Special Weapon:10

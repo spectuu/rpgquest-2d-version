@@ -28,7 +28,6 @@ public class FileManagement{
             PrintWriter exit = new PrintWriter(new FileWriter(file, true));
             exit.println(text);
             exit.close();
-            System.out.println("The information was added successfully");
         } catch (FileNotFoundException ex) {
             ex.printStackTrace(System.out);
         } catch (IOException ex) {

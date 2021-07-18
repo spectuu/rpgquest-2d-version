@@ -57,7 +57,7 @@ public class Statistics implements RPGScene {
         character.setLayoutX(20);
         character.setLayoutY(120);
 
-        playerCharacter = CreateCharacter.playerCharacter;
+        playerCharacter = CreateCharacter.player.getPlayerCharacterImageView();
         playerCharacter.setLayoutX(30);
         playerCharacter.setLayoutY(140);
         playerCharacter.setFitWidth(30);
@@ -68,12 +68,12 @@ public class Statistics implements RPGScene {
         specialWeapon.setLayoutX(120);
         specialWeapon.setLayoutY(120);
 
-        playerSpecialWeaponDescription = new Label(CreateCharacter.playerSpecialWeaponDescription);
+        playerSpecialWeaponDescription = new Label(CreateCharacter.player.getPlayerCharacterSpecialWeaponDescription());
         playerSpecialWeaponDescription.setFont(new Font(15));
         playerSpecialWeaponDescription.setLayoutX(30);
         playerSpecialWeaponDescription.setLayoutY(210);
 
-        playerAbility = new Label(CreateCharacter.playerAbility);
+        playerAbility = new Label(CreateCharacter.player.getPlayerCharacterAbilityDescription());
         playerAbility.setFont(new Font(15));
         playerAbility.setLayoutX(30);
         playerAbility.setLayoutY(300);
@@ -83,7 +83,7 @@ public class Statistics implements RPGScene {
         Equipment.setLayoutX(30);
         Equipment.setLayoutY(360);
 
-        playerSpecialWeapon = CreateCharacter.playerSpecialWeapon;
+        playerSpecialWeapon = CreateCharacter.player.getPlayerCharacterSpecialWeaponImageView();
         playerSpecialWeapon.setLayoutX(155);
         playerSpecialWeapon.setLayoutY(150);
 

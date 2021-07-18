@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class IncarnationOfTheDesert extends Enemy{
 
     public IncarnationOfTheDesert() {
-        super("Incarnation of the desert", 170, 170,30, "IncarnationOfTheDesert.png");
+        super("Incarnation of the desert", 170, 170,30, "IncarnationOfTheDesert.gif");
     }
 
     public void Sandstorm(){

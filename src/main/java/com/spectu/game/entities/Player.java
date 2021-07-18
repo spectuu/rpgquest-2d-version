@@ -27,18 +27,67 @@ public class Player extends Entity {
         this.inventory = new Inventory(new HealingPotion(), new EscapePotion(), new EnchantedKnife(), new SpectralHoz(), new MythrilSword(), specialWeapon(), new Mythril(), new Spectral());
     }
 
-    public ImageView getPlayerCharacter(){
+    public void setPlayerClass(String playerClass) {
+        this.playerClass = playerClass;
+    }
+
+    @Override
+    public void setName(String name) {
+        super.setName(name);
+    }
+
+    public void setHeal(int heal){
+       super.heal = heal;
+    }
+
+    public ImageView getPlayerCharacterImageView(){
         if(playerClass.equals("Fighter")){
-            playerImageView = CreateCharacter.fighterClass.characterImageView;
-            return playerImageView;
+            ImageView imageView = new ImageView(Main.getImage("Fighter.png"));
+            return imageView;
         }else if(playerClass.equals("Assassin")){
-            playerImageView = CreateCharacter.assassinClass.characterImageView;
-            return playerImageView;
+            ImageView imageView = new ImageView(Main.getImage("Assassin.png"));
+            return imageView;
         }else if(playerClass.equals("Wizard")){
-            playerImageView = CreateCharacter.wizardClass.characterImageView;
-            return playerImageView;
+            ImageView imageView = new ImageView(Main.getImage("Wizard.png"));
+            return imageView;
         }
         throw new RuntimeException("the character class could not be determined");
+    }
+
+    public ImageView getPlayerCharacterSpecialWeaponImageView(){
+        if(playerClass.equals("Fighter")){
+            ImageView imageView = new ImageView(Main.getImage("SpecialWeaponFighter.png"));
+            return imageView;
+        }else if(playerClass.equals("Assassin")){
+            ImageView imageView = new ImageView(Main.getImage("SpecialWeaponAssassin.png"));
+            return imageView;
+        }else if(playerClass.equals("Wizard")){
+            ImageView imageView = new ImageView(Main.getImage("SpecialWeaponWizard.png"));
+            return imageView;
+        }
+        throw new RuntimeException("the character Special Weapon Image View could not be determined");
+    }
+
+    public String getPlayerCharacterAbilityDescription(){
+        if(playerClass.equals("Fighter")) {
+            return "Ability: \n The Fighter has a 25% chance to Deal 35 additional damage and has a 15% change to recovery of 10 heal.";
+        }else if(playerClass.equals("Assassin")) {
+            return "Ability: \n the assassin executes the enemy if he is at 15 health or less.";
+        }if(playerClass.equals("Wizard")) {
+            return "The wizard has a 60% chance to add 2 health potions and 1 escape potion.";
+        }
+        throw new RuntimeException("the character ability could not be determined");
+    }
+
+    public String getPlayerCharacterSpecialWeaponDescription(){
+        if(playerClass.equals("Fighter")) {
+            return "Weapon: \n Golden spear: \n Base Damage: 25.";
+        }else if(playerClass.equals("Assassin")) {
+            return "Weapon: \n Enchanted Ice Sword: \n Base Damage: 40.";
+        }if(playerClass.equals("Wizard")) {
+            return "Weapon: \n Diabolical code: \n Base Damage: 60.";
+        }
+        throw new RuntimeException("the character special Weapon could not be determined");
     }
 
     public void abilityCharacter(){
