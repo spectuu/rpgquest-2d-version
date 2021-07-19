@@ -26,7 +26,6 @@ public class SavedGame {
             FileManagement.addInformation(fileName, "Durability Weapons:");
             FileManagement.addInformation(fileName, "Mythril Sword:" + CreateCharacter.player.inventory.getMythrilSword().durability);
             FileManagement.addInformation(fileName, "Spectral Hoz:" + CreateCharacter.player.inventory.getSpectralHoz().durability);
-            FileManagement.addInformation(fileName, "Special Weapon:" + CreateCharacter.player.inventory.getSpecialWeapon().durability);
     }
 
     public static void savedGame(){
